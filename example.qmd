@@ -1,0 +1,96 @@
+---
+title: Example Bug
+format: html
+---
+
+I would like to demonstrate how to create R, Python, and Julia code chunks in a document.
+
+In the past I have used 4 back ticks to capture what an R code chunk looks like:
+
+````
+
+```{r}
+# some R code
+image(volcano)
+```
+
+````
+
+However this doesn't seem to work.
+
+Is the current way to use the `verbatim` approach like so:
+
+````{verbatim, lang = "r"}
+
+```{r}
+# some R code
+image(volcano)
+```
+
+````
+
+So instead of the following:
+
+::: {.panel-tabset}
+
+## R
+
+````
+```{r}
+#| label: r-chunk-name
+# a code chunk
+```
+````
+
+## python
+
+````
+```{python}
+#| label: py-chunk-name
+# a code chunk
+```
+````
+
+## julia
+
+````
+```{julia}
+#| label: julia-chunk-name
+# a code chunk
+```
+````
+
+::: 
+
+I would need to do
+
+::: {.panel-tabset}
+
+## R
+
+````{verbatim, lang = "r"}
+```{r}
+#| label: r-chunk-name
+# a code chunk
+```
+````
+
+## python
+
+````{verbatim, lang = "python"}
+```{python}
+#| label: py-chunk-name
+# a code chunk
+```
+````
+
+## julia
+
+````{verbatim, lang = "julia"}
+```{julia}
+#| label: julia-chunk-name
+# a code chunk
+```
+````
+
+::: 
